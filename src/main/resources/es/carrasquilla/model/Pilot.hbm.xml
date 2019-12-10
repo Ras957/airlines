@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-dic-2019 21:42:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="es.carrasquilla.model.Pilot" table="pilot" catalog="airlines" optimistic-lock="version">
+        <id name="idEmployee" type="int">
+            <column name="id_employee" />
+            <generator class="foreign">
+                <param name="property">employee</param>
+            </generator>
+        </id>
+        <one-to-one name="employee" class="es.carrasquilla.model.Employee" constrained="true"></one-to-one>
+        <property name="flighttime" type="time">
+            <column name="flighttime" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

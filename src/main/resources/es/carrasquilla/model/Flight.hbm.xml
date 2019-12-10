@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-dic-2019 21:42:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="es.carrasquilla.model.Flight" table="flight" catalog="airlines" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="airportByIdAirportExit" class="es.carrasquilla.model.Airport" fetch="select">
+            <column name="id_airport_exit" not-null="true" />
+        </many-to-one>
+        <many-to-one name="airportByIdAirportArrival" class="es.carrasquilla.model.Airport" fetch="select">
+            <column name="id_airport_arrival" not-null="true" />
+        </many-to-one>
+        <property name="duration" type="time">
+            <column name="duration" length="8" not-null="true" />
+        </property>
+        <set name="flightEmployees" table="flight_employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_flight" not-null="true" />
+            </key>
+            <one-to-many class="es.carrasquilla.model.FlightEmployee" />
+        </set>
+        <set name="flightPlanes" table="flight_plane" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_flight" not-null="true" />
+            </key>
+            <one-to-many class="es.carrasquilla.model.FlightPlane" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-dic-2019 21:42:26 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="es.carrasquilla.model.Employee" table="employee" catalog="airlines" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="30" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="30" not-null="true" />
+        </property>
+        <property name="dni" type="string">
+            <column name="dni" length="10" not-null="true" />
+        </property>
+        <property name="nationality" type="string">
+            <column name="nationality" length="30" not-null="true" />
+        </property>
+        <property name="birthdate" type="date">
+            <column name="birthdate" length="10" not-null="true" />
+        </property>
+        <property name="salary" type="double">
+            <column name="salary" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="numFlights" type="int">
+            <column name="numFlights" not-null="true" />
+        </property>
+        <set name="flightEmployees" table="flight_employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_employee" not-null="true" />
+            </key>
+            <one-to-many class="es.carrasquilla.model.FlightEmployee" />
+        </set>
+        <one-to-one name="aircrew" class="es.carrasquilla.model.Aircrew"></one-to-one>
+        <one-to-one name="pilot" class="es.carrasquilla.model.Pilot"></one-to-one>
+    </class>
+</hibernate-mapping>
