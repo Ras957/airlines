@@ -17,33 +17,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="_vehicles" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="textvehicles" pref="179" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="tipo" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="_acquisitionDate" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="_price" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="_autonomy" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="_consumption" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="_capacity" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="textDate" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textPrice" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textAutonomy" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textConsumption" alignment="0" max="32767" attributes="0"/>
-                          <Component id="textCapacity" alignment="0" pref="180" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="_acquisitionDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_price" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_autonomy" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_consumption" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="_capacity" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="textDate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textPrice" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textAutonomy" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textConsumption" alignment="0" max="32767" attributes="0"/>
+                  <Component id="textCapacity" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,8 +41,6 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tipo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="_acquisitionDate" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textDate" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -77,12 +65,7 @@
                   <Component id="_capacity" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="textCapacity" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="_vehicles" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="textvehicles" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -92,11 +75,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha adquisici&#xf3;n:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="tipo">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Plane&gt;"/>
-      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="_price">
       <Properties>
@@ -127,13 +105,6 @@
     <Component class="javax.swing.JTextField" name="textConsumption">
     </Component>
     <Component class="javax.swing.JTextField" name="textCapacity">
-    </Component>
-    <Component class="javax.swing.JLabel" name="_vehicles">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Plazas veh&#xed;culos:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="textvehicles">
     </Component>
   </SubComponents>
 </Form>

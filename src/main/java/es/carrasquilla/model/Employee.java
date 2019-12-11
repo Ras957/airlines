@@ -1,6 +1,4 @@
 package es.carrasquilla.model;
-// Generated 09-dic-2019 21:42:24 by Hibernate Tools 4.3.1
-
 
 import java.util.Date;
 import java.util.HashSet;
@@ -12,23 +10,22 @@ import java.util.Set;
 public class Employee  implements java.io.Serializable {
 
 
-     private Integer id;
-     private String name;
-     private String lastname;
-     private String dni;
-     private String nationality;
-     private Date birthdate;
-     private double salary;
-     private int numFlights;
-     private Set flightEmployees = new HashSet(0);
-     private Aircrew aircrew;
-     private Pilot pilot;
+     protected Integer id;
+     protected String name;
+     protected String lastname;
+     protected String dni;
+     protected String nationality;
+     protected Date birthdate;
+     protected double salary;
+     protected int numFlights;
+     protected Set flightEmployees = new HashSet(0);
 
     public Employee() {
     }
 
 	
-    public Employee(String name, String lastname, String dni, String nationality, Date birthdate, double salary, int numFlights) {
+    public Employee(String name, String lastname, String dni, String nationality, 
+            Date birthdate, double salary, int numFlights) {
         this.name = name;
         this.lastname = lastname;
         this.dni = dni;
@@ -37,7 +34,8 @@ public class Employee  implements java.io.Serializable {
         this.salary = salary;
         this.numFlights = numFlights;
     }
-    public Employee(String name, String lastname, String dni, String nationality, Date birthdate, double salary, int numFlights, Set flightEmployees, Aircrew aircrew, Pilot pilot) {
+    public Employee(String name, String lastname, String dni, String nationality, 
+            Date birthdate, double salary, int numFlights, Set flightEmployees) {
        this.name = name;
        this.lastname = lastname;
        this.dni = dni;
@@ -46,8 +44,6 @@ public class Employee  implements java.io.Serializable {
        this.salary = salary;
        this.numFlights = numFlights;
        this.flightEmployees = flightEmployees;
-       this.aircrew = aircrew;
-       this.pilot = pilot;
     }
    
     public Integer getId() {
@@ -113,23 +109,6 @@ public class Employee  implements java.io.Serializable {
     public void setFlightEmployees(Set flightEmployees) {
         this.flightEmployees = flightEmployees;
     }
-    public Aircrew getAircrew() {
-        return this.aircrew;
-    }
-    
-    public void setAircrew(Aircrew aircrew) {
-        this.aircrew = aircrew;
-    }
-    public Pilot getPilot() {
-        return this.pilot;
-    }
-    
-    public void setPilot(Pilot pilot) {
-        this.pilot = pilot;
-    }
-
-
-
 
 }
 

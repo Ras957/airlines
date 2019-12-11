@@ -18,7 +18,7 @@ import javax.swing.table.AbstractTableModel;
  * @author Francisco Miguel Carrasquilla Rodríguez-Córdoba 
  * <afcarrasquilla@iesfranciscodelosrios.es>
  */
-public class AirplaneTableModel extends AbstractTableModel{
+public class PlaneTableModel extends AbstractTableModel{
     
     private List<Plane> datos = new ArrayList<>();
     

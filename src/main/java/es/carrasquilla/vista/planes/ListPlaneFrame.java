@@ -15,13 +15,13 @@ import es.carrasquilla.model.dao.PlaneDAO;
  * @author Francisco Miguel Carrasquilla Rodríguez-Córdoba
  * <afcarrasquilla@iesfranciscodelosrios.es>
  */
-public class ListAirplaneFrame extends javax.swing.JFrame {
+public class ListPlaneFrame extends javax.swing.JFrame {
 
-   private AirplaneTableModel model;
+   private PlaneTableModel model;
    
-    public ListAirplaneFrame() {
+    public ListPlaneFrame() {
         initComponents();
-        this.model = new AirplaneTableModel();
+        this.model = new PlaneTableModel();
         getData();
         this.table.setModel(model);
         this.data.setEdit(false);
@@ -55,45 +55,64 @@ public class ListAirplaneFrame extends javax.swing.JFrame {
         buttonDelete = new javax.swing.JButton();
         buttonSave = new javax.swing.JButton();
         buttonCancel = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        textSearch = new javax.swing.JTextField();
+        buttonSearch = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        data = new es.carrasquilla.vista.planes.AirplaneDetailsPanel();
+        data = new es.carrasquilla.vista.planes.PlaneDetailsPanel();
         records = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
+        buttonAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/add.png"))); // NOI18N
         buttonAdd.setText("Añadir");
         buttonAdd.setFocusable(false);
         buttonAdd.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonAdd.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(buttonAdd);
 
+        buttonEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/edit.png"))); // NOI18N
         buttonEdit.setText("Editar");
         buttonEdit.setFocusable(false);
         buttonEdit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonEdit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(buttonEdit);
 
+        buttonDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/delete.png"))); // NOI18N
         buttonDelete.setText("Eliminar");
         buttonDelete.setFocusable(false);
         buttonDelete.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonDelete.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(buttonDelete);
 
+        buttonSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/save.png"))); // NOI18N
         buttonSave.setText("Guardar");
         buttonSave.setFocusable(false);
         buttonSave.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonSave.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(buttonSave);
 
+        buttonCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/cancelar.png"))); // NOI18N
         buttonCancel.setText("Cancelar");
         buttonCancel.setFocusable(false);
         buttonCancel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buttonCancel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(buttonCancel);
+
+        jPanel2.setLayout(null);
+        jPanel2.add(textSearch);
+        textSearch.setBounds(250, 30, 160, 20);
+
+        buttonSearch.setText("Buscar");
+        jPanel2.add(buttonSearch);
+        buttonSearch.setBounds(410, 30, 65, 23);
+
+        jToolBar1.add(jPanel2);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
@@ -152,20 +171,21 @@ public class ListAirplaneFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListAirplaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListPlaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListAirplaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListPlaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListAirplaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListPlaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListAirplaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListPlaneFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListAirplaneFrame().setVisible(true);
+                new ListPlaneFrame().setVisible(true);
             }
         });
     }
@@ -176,12 +196,15 @@ public class ListAirplaneFrame extends javax.swing.JFrame {
     private javax.swing.JButton buttonDelete;
     private javax.swing.JButton buttonEdit;
     private javax.swing.JButton buttonSave;
-    private es.carrasquilla.vista.planes.AirplaneDetailsPanel data;
+    private javax.swing.JButton buttonSearch;
+    private es.carrasquilla.vista.planes.PlaneDetailsPanel data;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JLabel records;
     private javax.swing.JTable table;
+    private javax.swing.JTextField textSearch;
     // End of variables declaration//GEN-END:variables
 }
 

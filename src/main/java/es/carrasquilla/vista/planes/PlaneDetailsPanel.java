@@ -15,12 +15,12 @@ import java.util.regex.Pattern;
  * @author Francisco Miguel Carrasquilla Rodríguez-Córdoba
  * <afcarrasquilla@iesfranciscodelosrios.es>
  */
-public class AirplaneDetailsPanel extends javax.swing.JPanel {
+public class PlaneDetailsPanel extends javax.swing.JPanel {
 
     private Plane plane;
     private boolean edit; 
     
-    public AirplaneDetailsPanel() {
+    public PlaneDetailsPanel() {
         initComponents();
     }
 
@@ -102,7 +102,6 @@ public class AirplaneDetailsPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         _acquisitionDate = new javax.swing.JLabel();
-        tipo = new javax.swing.JComboBox<>();
         _price = new javax.swing.JLabel();
         _autonomy = new javax.swing.JLabel();
         _consumption = new javax.swing.JLabel();
@@ -112,8 +111,6 @@ public class AirplaneDetailsPanel extends javax.swing.JPanel {
         textAutonomy = new javax.swing.JTextField();
         textConsumption = new javax.swing.JTextField();
         textCapacity = new javax.swing.JTextField();
-        _vehicles = new javax.swing.JLabel();
-        textvehicles = new javax.swing.JTextField();
 
         _acquisitionDate.setText("Fecha adquisición:");
 
@@ -125,42 +122,31 @@ public class AirplaneDetailsPanel extends javax.swing.JPanel {
 
         _capacity.setText("Capacidad:");
 
-        _vehicles.setText("Plazas vehículos:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(_acquisitionDate)
+                    .addComponent(_price)
+                    .addComponent(_autonomy)
+                    .addComponent(_consumption)
+                    .addComponent(_capacity))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(_vehicles)
-                        .addGap(18, 18, 18)
-                        .addComponent(textvehicles))
-                    .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(_acquisitionDate)
-                            .addComponent(_price)
-                            .addComponent(_autonomy)
-                            .addComponent(_consumption)
-                            .addComponent(_capacity))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textDate)
-                            .addComponent(textPrice)
-                            .addComponent(textAutonomy)
-                            .addComponent(textConsumption)
-                            .addComponent(textCapacity, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(textDate)
+                    .addComponent(textPrice)
+                    .addComponent(textAutonomy)
+                    .addComponent(textConsumption)
+                    .addComponent(textCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_acquisitionDate)
                     .addComponent(textDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -180,11 +166,7 @@ public class AirplaneDetailsPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(_capacity)
                     .addComponent(textCapacity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(_vehicles)
-                    .addComponent(textvehicles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -195,14 +177,11 @@ public class AirplaneDetailsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel _capacity;
     private javax.swing.JLabel _consumption;
     private javax.swing.JLabel _price;
-    private javax.swing.JLabel _vehicles;
     private javax.swing.JTextField textAutonomy;
     private javax.swing.JTextField textCapacity;
     private javax.swing.JTextField textConsumption;
     private javax.swing.JFormattedTextField textDate;
     private javax.swing.JTextField textPrice;
-    private javax.swing.JTextField textvehicles;
-    private javax.swing.JComboBox<Plane> tipo;
     // End of variables declaration//GEN-END:variables
 }
 

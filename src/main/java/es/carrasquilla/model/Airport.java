@@ -1,6 +1,4 @@
 package es.carrasquilla.model;
-// Generated 09-dic-2019 21:42:24 by Hibernate Tools 4.3.1
-
 
 import java.util.HashSet;
 import java.util.Set;

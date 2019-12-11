@@ -6,6 +6,7 @@
 package es.carrasquilla.model.dao;
 
 import es.carrasquilla.model.Plane;
+import es.carrasquilla.model.Seat;
 import es.carrasquilla.utilities.HibernateUtilities_5;
 import java.util.List;
 import javax.persistence.TypedQuery;
@@ -17,15 +18,15 @@ import org.hibernate.SessionFactory;
  * @author Francisco Miguel Carrasquilla Rodríguez-Córdoba
  * <afcarrasquilla@iesfranciscodelosrios.es>
  */
-public class PlaneDAO {
+public class SeatDAO {
     
     static Session session;
     
-    public static void create(Plane p){
+    public static void create(Seat s){
         try (SessionFactory sf = HibernateUtilities_5.getSessionFactory()) {
             session = sf.openSession();
             session.beginTransaction();
-            session.save(p);
+            session.save(s);
             session.getTransaction().commit();        
         }finally{
             if (session != null) {
@@ -47,17 +48,16 @@ public class PlaneDAO {
         }
     }
     
-    public static void update(Integer id, Plane plane){
+    public static void update(Integer id, Seat seat){
         try (SessionFactory sf = HibernateUtilities_5.getSessionFactory()) {
             session = sf.openSession();
             session.beginTransaction();
-            Plane p = (Plane) session.get(Plane.class, id);
-            p.setAcquisitionDate(plane.getAcquisitionDate());
-            p.setAutonomy(plane.getAutonomy());
-            p.setCapacity(plane.getCapacity());
-            p.setConsumption(plane.getConsumption());
-            p.setPrice(plane.getPrice());
-            session.update(p);
+            Seat s = (Seat) session.get(Seat.class, id);
+            s.setPlane(seat.getPlane());
+            s.setRow(seat.getRow());
+            s.setLetter(seat.getLetter());
+            s.setVip(seat.isVip());
+            session.update(s);
             session.getTransaction().commit();        
         }finally{
             if (session != null) {
@@ -66,12 +66,12 @@ public class PlaneDAO {
         }
     }
 
-    public static Plane get(Integer id) {
-        Plane a = null;
+    public static Seat get(Integer id) {
+        Seat a = null;
         try (SessionFactory sf = HibernateUtilities_5.getSessionFactory()) {
             session = sf.openSession();
             session.beginTransaction();
-            a = (Plane) session.get(Plane.class, id);
+            a = (Seat) session.get(Seat.class, id);
             session.getTransaction().commit();        
         }finally{
             if (session != null) {
@@ -81,12 +81,28 @@ public class PlaneDAO {
         return a;
     }
     
-    public static List<Plane> getAll() {
-        List<Plane> list;
+    public static List<Seat> getAll() {
+        List<Seat> list;
         try (SessionFactory sf = HibernateUtilities_5.getSessionFactory()) {
             session = sf.openSession();
             session.beginTransaction();
-            TypedQuery<Plane> query = session.createQuery("from Plane");
+            TypedQuery<Seat> query = session.createQuery("from Seat");
+            list = query.getResultList();
+            session.getTransaction().commit();  //session.getTransaction().rollback();        
+        }finally{
+            if (session != null) {
+                session.close();
+            }
+        }
+        return list;
+    }
+    
+    public static List<Seat> getAllByPlane(Plane p) {
+        List<Seat> list;
+        try (SessionFactory sf = HibernateUtilities_5.getSessionFactory()) {
+            session = sf.openSession();
+            session.beginTransaction();
+            TypedQuery<Seat> query = session.createQuery("from Seat where plane := p");
             list = query.getResultList();
             session.getTransaction().commit();  //session.getTransaction().rollback();        
         }finally{
@@ -97,16 +113,6 @@ public class PlaneDAO {
         return list;
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
